@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word House Game</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="title">🏦Bank robbery adventure🏦</h1>
+        <div class="score">
+            Score: <span id="score">0</span>
+        </div>
+        
+        <!-- Speaker symbol (initially hidden) -->
+        <div id="speaker" class="speaker hidden">
+            🔊
+            <button id="play-word" class="play-btn">Play Word</button>
+        </div>
+        
+        <!-- Game area -->
+        <div class="game-area">
+            <div class="locker">
+                <img id="locker-img" src="locker2.webp" alt="Locker Image" class="locker-image">
+            </div>
+            
+            <!-- Word input area (initially hidden) -->
+            <div id="word-input-area" class="word-input-area hidden">
+                <div id="word-display" class="word-display"></div>
+                <input type="text" id="word-input" class="word-input" placeholder="Enter the password..." maxlength="10">
+                <button id="submit-word" class="submit-btn">Submit</button>
+                <div id="attempts" class="attempts">Attempts remaining: 2</div>
+                <div id="message" class="message"></div>
+            </div>
+        </div>
+        
+        <button id="new-game" class="new-game-btn hidden">New Game</button>
+    </div>
+</body>
+</html>
