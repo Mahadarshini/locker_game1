@@ -8,35 +8,93 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="game-container">
-        <h1 class="title">🏦Bank robbery adventure🏦</h1>
-        <div class="score">
-            Score: <span id="score">0</span>
-        </div>
-        
-        <!-- Speaker symbol (initially hidden) -->
-        <div id="speaker" class="speaker hidden">
-            🔊
-            <button id="play-word" class="play-btn">Play Word</button>
-        </div>
-        
-        <!-- Game area -->
-        <div class="game-area">
-            <div class="locker">
-                <img id="locker-img" src="locker2.webp" alt="Locker Image" class="locker-image">
-            </div>
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Thief Selection Page -->
+    <div id="thief-selection" class="page">
+        <div class="selection-container">
+            <h1 class="main-title">🏦 BANK ROBBERY ADVENTURE 🏦</h1>
+            <h2 class="subtitle">Choose Your Partner in Crime</h2>
             
-            <!-- Word input area (initially hidden) -->
-            <div id="word-input-area" class="word-input-area hidden">
-                <div id="word-display" class="word-display"></div>
-                <input type="text" id="word-input" class="word-input" placeholder="Enter the password..." maxlength="10">
-                <button id="submit-word" class="submit-btn">Submit</button>
-                <div id="attempts" class="attempts">Attempts remaining: 2</div>
-                <div id="message" class="message"></div>
+            <div class="thieves-container">
+                <div class="thief-card" data-thief="1">
+                    <img src="male.png" alt="Thief 1" class="thief-image">
+                    <h3>Shadow Jack</h3>
+                    <p>The Silent Specialist</p>
+                    <button class="select-thief-btn">SELECT</button>
+                </div>
+                
+                <div class="thief-card" data-thief="2">
+                    <img src="female.png" alt="Thief 2" class="thief-image">
+                    <h3>Clever Kate</h3>
+                    <p>The Master Cracker</p>
+                    <button class="select-thief-btn">SELECT</button>
+                </div>
             </div>
         </div>
-        
-        <button id="new-game" class="new-game-btn hidden">New Game</button>
+    </div>
+
+    <!-- Tutorial Pages -->
+    <div id="tutorial" class="page hidden">
+        <div class="tutorial-container">
+            <div class="thief-dialogue">
+                <img id="tutorial-thief-img" src="" alt="Selected Thief" class="dialogue-thief-image">
+                <div class="dialogue-bubble">
+                    <p id="dialogue-text"></p>
+                    <div class="dialogue-buttons">
+                        <button id="next-btn" class="dialogue-btn">NEXT</button>
+                        <button id="skip-btn" class="dialogue-btn skip">SKIP TUTORIAL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Page -->
+    <div id="game-page" class="page hidden">
+        <div class="game-layout">
+            <!-- Game Area -->
+            <div class="game-main">
+                <h1 class="title">🏦Bank robbery adventure🏦</h1>
+                <div class="score">
+                    Score: <span id="score">0</span>🪙
+                </div>
+                
+                <!-- Speaker symbol (initially hidden) -->
+                <div id="speaker" class="speaker hidden">
+                    🔊
+                    <button id="play-word" class="play-btn">Play Word</button>
+                </div>
+                
+                <!-- Game area -->
+                <div class="game-area">
+                    <div class="locker">
+                        <img id="locker-img" src="t2.png" alt="Locker Image" class="locker-image">
+                    </div>
+                    
+                    <!-- Word input area (initially hidden) -->
+                    <div id="word-input-area" class="word-input-area hidden">
+                        <div id="word-display" class="word-display"></div>
+                        <input type="text" id="word-input" class="word-input" placeholder="Enter the password..." maxlength="10">
+                        <button id="submit-word" class="submit-btn">Submit</button>
+                        <div id="attempts" class="attempts">Attempts remaining: 2</div>
+                        <div id="message" class="message"></div>
+                    </div>
+                </div>
+                
+                <button id="new-game" class="new-game-btn hidden">New Game</button>
+            </div>
+
+            <!-- Thief Sidebar -->
+            <div class="thief-sidebar">
+                <img id="game-thief-img" src="" alt="Your Thief Partner" class="sidebar-thief-image">
+                <div class="thief-encouragement">
+                    <p id="thief-comment">Click the safe to start the heist!</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
