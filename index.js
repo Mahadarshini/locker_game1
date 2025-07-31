@@ -159,7 +159,7 @@ function updateThiefComment(index) {
 
 // Create dashed display for word
 function createWordDisplay() {
-    wordDisplay.innerHTML = currentWord.split('').map(() => '_').join(' ');
+    wordDisplay.innerHTML = currentWord.split('').map(() => '').join(' ');
 }
 
 // Play word sound
